@@ -1,11 +1,27 @@
-//
-// Created by Serhii Pustovit on 30.11.2025.
-//
+#pragma once
 
-#ifndef VILLAGE_RESIDENT_MINER_HPP
-#define VILLAGE_RESIDENT_MINER_HPP
+#include <functional>
+#include <memory>
+#include <string>
 
-class ResidentMiner
-{};
+#include <village/resident.hpp>
 
-#endif // VILLAGE_RESIDENT_MINER_HPP
+namespace vsa::village {
+
+class ResidentMiner : public Resident
+{
+public:
+    static std::string s_get_id() { return "r_miner"; }
+    static std::string s_get_name() { return "Miner"; }
+    std::string get_id() override { return s_get_id(); }
+    std::string get_name() override { return s_get_name(); }
+
+public:
+    ResidentMiner(bool is_male = true, std::size_t age_days = 0);
+
+    void eat() override;
+    void produce() override {}
+    void iterate_impl() override {}
+};
+
+}
