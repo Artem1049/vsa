@@ -2,6 +2,7 @@
 
 #include "village/entities_registry.hpp"
 
+
 #include <mutex>
 #include <random>
 #include <utility>

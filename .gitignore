@@ -4,3 +4,6 @@
 cmake-build-*/
 buildx/
 build/
+
+.vscode/
+
